@@ -210,6 +210,7 @@ class MelGANIE:
 
         self.exec_net = self.create_exec_network(self.net, self.scales)
 
+        # @xcmyz: attention! the length of mel-spectrogram is fixed
         # fixed number of columns in mel-spectrogramm
         self.mel_len = self.net.input_info['mel'].input_data.shape[2]
         self.widths = [self.mel_len * (i + 1) for i in range(self.scales)]
